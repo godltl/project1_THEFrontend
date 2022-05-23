@@ -24,6 +24,7 @@ export class Flights extends Component{
         let data = await api.get('/').then(({data}) => data);
         this.setState({flights:data})
         }
+    
 
     createFlight = async (id) => {
         let data = await api.post(`/${id}`)
@@ -35,6 +36,8 @@ export class Flights extends Component{
         let data = await api.delete(`/${id}`)
         this.getFlights();
     }
+
+    
     
 
     render(){

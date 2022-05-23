@@ -2,6 +2,7 @@ import './App.css';
 import Home from './Home';
 import PutPassenger from './PutPassenger';
 import PutFlight from './PutFlight';
+import PutReservation from './PutReservation';
 import {Passengers} from './Passengers';
 import { FlightBookings } from './FlightBooking'; 
 import AddAFlight from './AddAFlight';
@@ -68,9 +69,11 @@ function App() {
               Update Flight
             </NavLink>
           </li>
-          
-         
-          
+          <li className="nav-item- m-1">
+            <NavLink className="btn btn-light btn-outline-primary" to="/UpdateReservation">
+              Update Reservation
+            </NavLink>
+          </li>
         </ul>
       </nav>
 
@@ -81,6 +84,7 @@ function App() {
         <Route exact path='/AddPassengers' element={<AddAPassenger/>}/>
         <Route exact path='/UpdatePassenger' element={<PutPassenger/>}/>
         <Route exact path='/UpdateFlight' element={<PutFlight/>}/>
+        <Route exact path='/UpdateReservation' element={<PutReservation/>}/>
         <Route exact path='/Reservations' element={<FlightBookings/>}/>
         <Route exact path='/AddReservations' element={<AddAFlightBooking/>}/>
         <Route exact path='' element={<Home/>}/>

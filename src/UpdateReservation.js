@@ -2,17 +2,19 @@ import axios from 'axios';
 import React,{Component} from 'react';
 
 
-export default class PostFlightBooking extends Component{
+export default class UpdateReservation extends Component{
     constructor(props) {
         super(props)
 
+
         this.state={
-            
+            BookingNumber: '',
             PassengerId:'',
-            FlightNumber:'',
+            FlightNumber:''
            
             
         }
+        
     }
 
     changeHandler=e=> {
@@ -20,9 +22,10 @@ export default class PostFlightBooking extends Component{
     }
 
     submitHandler=e=>{
+        var id=this.state.BookingNumber;
         e.preventDefault()
         console.log(this.state)
-        axios.post("https://localhost:7081/api/FlightBookings",this.state)
+        axios.put(`https://localhost:7081/api/FlightBookings/${id}`,this.state)
         .then(response=> {
             console.log(response)
         })
@@ -33,11 +36,15 @@ export default class PostFlightBooking extends Component{
 
     
     render(){
-        const {PassengerId,FlightNumber}=this.state
+        const {BookingNumber,PassengerId,FlightNumber}=this.state
         return(
-            <div>
+            <div class="p-3 mb-2 bg-dark text-white">
+                <h1>Update a Reservation</h1>
                 <form onSubmit={this.submitHandler}>
-                    
+                    <div>Booking Number</div>
+                    <div>
+                        <input type = "number" name="BookingNumber" min="1" value={BookingNumber} onChange={this.changeHandler}/>
+                    </div>
                     <div>Passenger Id</div>
                     <div>
                         <input type = "number" name="PassengerId" min="1" value={PassengerId} onChange={this.changeHandler}/>

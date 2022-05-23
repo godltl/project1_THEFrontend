@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import { createAPIEndpoint, ENDPS } from './Api';
-import PostFlight from './PostFlight';
+import PostFlight from './UpdateFlight';
 
 export default function Home(props){
 
