@@ -58,9 +58,7 @@ export class Passengers extends Component{
                     <th>
                         Age
                     </th>
-                    <th>
-                        Confirmation Number
-                    </th>
+                   
                     <th>
                         Delete
                     </th>
@@ -76,7 +74,6 @@ export class Passengers extends Component{
                             <td>{pass.job}</td>
                             <td>{pass.email}</td>
                             <td>{pass.age}</td>
-                            <td>{pass.confirmationNumber}</td>
                             <td><button onClick={()=>this.deletePassenger(pass.passengerId)}>X</button></td>
                             
                         </tr>

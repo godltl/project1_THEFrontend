@@ -12,8 +12,8 @@ export default class UpdatePassenger extends Component{
             Name:'',
             Job:'',
             Email:'',
-            Age:'',
-            ConfirmationNumber:''
+            Age:''
+           
             
         }
         
@@ -38,14 +38,14 @@ export default class UpdatePassenger extends Component{
 
     
     render(){
-        const {PassengerId,Name,Job,Email,Age,ConfirmationNumber}=this.state
+        const {PassengerId,Name,Job,Email,Age}=this.state
         return(
             <div class="p-3 mb-2 bg-dark text-white">
                 <h1>Update a Passenger</h1>
                 <form onSubmit={this.submitHandler}>
                     <div>Passenger Id</div>
                     <div>
-                        <input type = "text" name="PassengerId" value={PassengerId} onChange={this.changeHandler}/>
+                        <input type = "number" name="PassengerId" min="1" value={PassengerId} onChange={this.changeHandler}/>
                     </div>
                     <div>Name</div>
                     <div>
@@ -57,15 +57,11 @@ export default class UpdatePassenger extends Component{
                     </div>
                     <div>Email</div>
                     <div>
-                        <input type = "text" name="Email" value={Email} onChange={this.changeHandler}/>
+                        <input type = "email" name="Email" value={Email} onChange={this.changeHandler}/>
                     </div>
                     <div>Age</div>
                     <div>
-                        <input type = "text" name="Age" value={Age} onChange={this.changeHandler}/>
-                    </div>
-                    <div>Confirmation Number</div>
-                    <div>
-                        <input type = "text" name="ConfirmationNumber" value={ConfirmationNumber} onChange={this.changeHandler}/>
+                        <input type = "number" name="Age" min="0" max="130" value={Age} onChange={this.changeHandler}/>
                     </div>
                     <button type="submit">Submit</button>
                 </form>

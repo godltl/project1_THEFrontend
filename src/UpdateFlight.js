@@ -45,35 +45,35 @@ export default class PostFlight extends Component{
                 <form onSubmit={this.submitHandler}>
                     <div>Flight Number</div>
                     <div>
-                        <input type = "int" name="FlightNumber" value={FlightNumber} onChange={this.changeHandler}/>
+                        <input type = "number" name="FlightNumber" min="1" value={FlightNumber} onChange={this.changeHandler}/>
                     </div>
                     <div>Departure Date</div>
                     <div>
-                        <input type = "text" name="DepartureDate" value={DepartureDate} onChange={this.changeHandler}/>
+                        <input type = "date" name="DepartureDate" value={DepartureDate} onChange={this.changeHandler}/>
                     </div>
                     <div>Arrival Date</div>
                     <div>
-                        <input type = "text" name="ArrivalDate" value={ArrivalDate} onChange={this.changeHandler}/>
+                        <input type = "date" name="ArrivalDate" value={ArrivalDate} onChange={this.changeHandler}/>
                     </div>
                     <div>Departure Time</div>
                     <div>
-                        <input type = "text" name="DepartureTime" value={DepartureTime} onChange={this.changeHandler}/>
+                        <input type = "time" name="DepartureTime" value={DepartureTime} onChange={this.changeHandler}/>
                     </div>
                     <div>Arrival Time</div>
                     <div>
-                        <input type = "text" name="ArrivalTime" value={ArrivalTime} onChange={this.changeHandler}/>
+                        <input type = "time" name="ArrivalTime" value={ArrivalTime} onChange={this.changeHandler}/>
                     </div>
                     <div>Departure Airport</div>
                     <div>
-                        <input type = "text" name="DepartureAirport" value={DepartureAirport} onChange={this.changeHandler}/>
+                        <input type = "text" name="DepartureAirport" minlength="3" maxlength="3" value={DepartureAirport} onChange={this.changeHandler}/>
                     </div>
                     <div>Arrival Airport</div>
                     <div>
-                        <input type = "text" name="ArrivalAirport" value={ArrivalAirport} onChange={this.changeHandler}/>
+                        <input type = "text" name="ArrivalAirport" minlength="3" maxlength="3" value={ArrivalAirport} onChange={this.changeHandler}/>
                     </div>
                     <div>Passenger Limit</div>
                     <div>
-                        <input type = "text" name="PassengerLimit" value={PassengerLimit} onChange={this.changeHandler}/>
+                        <input type = "number" name="PassengerLimit" min="1" value={PassengerLimit} onChange={this.changeHandler}/>
                     </div>
                     <button type="submit">Submit</button>
                 </form>

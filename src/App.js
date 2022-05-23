@@ -3,12 +3,15 @@ import Home from './Home';
 import PutPassenger from './PutPassenger';
 import PutFlight from './PutFlight';
 import {Passengers} from './Passengers';
+import { FlightBookings } from './FlightBooking'; 
 import AddAFlight from './AddAFlight';
 import AddAPassenger from './AddAPassenger';
 import {Flights} from './Flights';
 import {BrowserRouter, Route,NavLink, Routes} from 'react-router-dom';
 import React from 'react';
 import { ErrorPage } from './ErrorPage';
+import AddAFlightBooking from './AddAFlightBooking';
+
 
 function App() {
   return (
@@ -22,7 +25,7 @@ function App() {
         <ul className="navbar-nav">
           <li className="nav-item- m-1">
             <NavLink className="btn btn-light btn-outline-primary" to="">
-              Home
+              Home Page
             </NavLink>
           </li>
           <li className="nav-item- m-1">
@@ -36,6 +39,11 @@ function App() {
             </NavLink>
           </li>
           <li className="nav-item- m-1">
+            <NavLink className="btn btn-light btn-outline-primary" to="/Reservations">
+              All Reservations
+            </NavLink>
+          </li>
+          <li className="nav-item- m-1">
             <NavLink className="btn btn-light btn-outline-primary" to="/AddFlights">
               Add Flights
             </NavLink>
@@ -43,6 +51,11 @@ function App() {
           <li className="nav-item- m-1">
             <NavLink className="btn btn-light btn-outline-primary" to="/AddPassengers">
               Add Passengers
+            </NavLink>
+          </li>
+          <li className="nav-item- m-1">
+            <NavLink className="btn btn-light btn-outline-primary" to="/AddReservations">
+              Add a Reservation
             </NavLink>
           </li>
           <li className="nav-item- m-1">
@@ -55,6 +68,9 @@ function App() {
               Update Flight
             </NavLink>
           </li>
+          
+         
+          
         </ul>
       </nav>
 
@@ -65,6 +81,8 @@ function App() {
         <Route exact path='/AddPassengers' element={<AddAPassenger/>}/>
         <Route exact path='/UpdatePassenger' element={<PutPassenger/>}/>
         <Route exact path='/UpdateFlight' element={<PutFlight/>}/>
+        <Route exact path='/Reservations' element={<FlightBookings/>}/>
+        <Route exact path='/AddReservations' element={<AddAFlightBooking/>}/>
         <Route exact path='' element={<Home/>}/>
         <Route exact path='*' element={<ErrorPage/>}/>
       </Routes>

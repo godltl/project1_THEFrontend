@@ -7,7 +7,7 @@ export default class PostPassenger extends Component{
         super(props)
 
         this.state={
-            PassengerId: '',
+            
             Name:'',
             Job:'',
             Email:'',
@@ -35,14 +35,11 @@ export default class PostPassenger extends Component{
 
     
     render(){
-        const {PassengerId,Name,Job,Email,Age,ConfirmationNumber}=this.state
+        const {Name,Job,Email,Age}=this.state
         return(
             <div>
                 <form onSubmit={this.submitHandler}>
-                    <div>Passenger Id</div>
-                    <div>
-                        <input type = "text" name="PassengerId" value={PassengerId} onChange={this.changeHandler}/>
-                    </div>
+                    
                     <div>Name</div>
                     <div>
                         <input type = "text" name="Name" value={Name} onChange={this.changeHandler}/>
@@ -53,15 +50,11 @@ export default class PostPassenger extends Component{
                     </div>
                     <div>Email</div>
                     <div>
-                        <input type = "text" name="Email" value={Email} onChange={this.changeHandler}/>
+                        <input type = "email" name="Email" value={Email} onChange={this.changeHandler}/>
                     </div>
                     <div>Age</div>
                     <div>
-                        <input type = "text" name="Age" value={Age} onChange={this.changeHandler}/>
-                    </div>
-                    <div>Confirmation Number</div>
-                    <div>
-                        <input type = "text" name="ConfirmationNumber" value={ConfirmationNumber} onChange={this.changeHandler}/>
+                        <input type = "number" name="Age" min="0" max="130" value={Age} onChange={this.changeHandler}/>
                     </div>
                     <button type="submit">Submit</button>
                 </form>
